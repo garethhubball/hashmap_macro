@@ -3,7 +3,7 @@ name = "hashmap_macro"
 version = "0.1.0"
 authors = ["Gareth Hubball <ridecar2@gmail.com>"]
 edition = "2018"
-description = "A simple macro inspired by Jon Gjengset's video on macro_rules!"
+description = "A simple macro inspired by Jon Gjengset's video on macro_rules! here: https://www.youtube.com/watch?v=q6paRBbLgNw"
 license = "MIT OR Apache-2.0"
 
 # Let's not publish this simple thing.
