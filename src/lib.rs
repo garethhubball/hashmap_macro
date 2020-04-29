@@ -1,6 +1,6 @@
 /// Creates a [`std::collections::HashMap`] containing the arguments.
 /// 
-/// `hashmap!` allows `HashMap`s to be defined with simple `=>` syntax much line in ruby.
+/// `hashmap!` allows `HashMap`s to be defined with simple `=>` syntax much like in ruby.
 ///
 /// Sample usage:
 /// ```
