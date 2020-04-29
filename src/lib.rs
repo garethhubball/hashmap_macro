@@ -19,7 +19,7 @@ macro_rules! hashmap {
     };
 
     ($($key:expr => $value:expr),+) => {{
-        let mut hm = ::std::collections::HashMap::with_capacity(count_items!(@COUNT, $($key),*));
+        let mut hm = ::std::collections::HashMap::with_capacity($crate::count_items!(@COUNT, $($key),*));
         $(hm.insert($key, $value);)+
         hm
     }};
