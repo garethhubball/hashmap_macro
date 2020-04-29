@@ -3,11 +3,14 @@
 /// `hashmap!` allows `HashMap`s to be defined with simple `=>` syntax much like in ruby.
 ///
 /// Sample usage:
-/// ```
+/// ```edition2018
+/// # #[macro_use] extern crate hashmap_macro;
+/// # fn main() {
 /// let result = hashmap!["Foo" => "Bar", "Baz" => "Quux"];
 /// assert_eq!(result["Foo"], "Bar");
 /// assert_eq!(result["Baz"], "Quux");
 /// assert_eq!(result.len(), 2);
+/// # }
 /// ```
 #[macro_export]
 macro_rules! hashmap {
@@ -24,13 +27,13 @@ macro_rules! hashmap {
     ($($key:expr => $value:expr,)+) => { hashmap![$($key => $value),+] };
 }
 
-#[cfg_attr(not(test), allow(unused_macros))]
+#[macro_export]
 macro_rules! count_items {
     (@COUNT, $($item:expr),*) => {
-        <[()]>::len(&[$(count_items!(@SUBST, $item, ())),*])
+        <[()]>::len(&[$(count_items!(@SUBST, $item)),*])
     };
 
-    (@SUBST, $_x:expr, $sub:expr) => {
+    (@SUBST, $_x:expr) => {
         ()
     };
 }
